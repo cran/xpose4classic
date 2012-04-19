@@ -44,13 +44,13 @@
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           xp.gam(.cur.db,overwrite=FALSE),
+           xp.gam(eval(parse(text=".cur.db")),overwrite=FALSE),
            xp.summary(),
-           print(xp.plot(plot.ids=.cur.db@Prefs@Gam.prefs$plot.ids)),
+           print(xp.plot(plot.ids=eval(parse(text=".cur.db"))@Prefs@Gam.prefs$plot.ids)),
            print(xp.akaike.plot()),
            print(xp.ind.stud.res()),
-           print(xp.ind.inf.fit(plot.ids=.cur.db@Prefs@Gam.prefs$plot.ids)),
-           print(xp.ind.inf.terms(plot.ids=.cur.db@Prefs@Gam.prefs$plot.ids)),
+           print(xp.ind.inf.fit(plot.ids=eval(parse(text=".cur.db"))@Prefs@Gam.prefs$plot.ids)),
+           print(xp.ind.inf.terms(plot.ids=eval(parse(text=".cur.db"))@Prefs@Gam.prefs$plot.ids)),
            qx <- gam.settings.menu()
            )
 

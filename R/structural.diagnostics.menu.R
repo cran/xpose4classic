@@ -41,7 +41,7 @@ structural.diagnostics.menu <-
     pick <- menu(choices,title=title)
 
 
-    if(is.null(check.vars(c("cwres"),.cur.db,silent=TRUE))) {
+    if(is.null(check.vars(c("cwres"),eval(parse(text=".cur.db")),silent=TRUE))) {
       wres <- "wres"
     }else{
       wres <- "cwres"
@@ -52,22 +52,22 @@ structural.diagnostics.menu <-
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           print(dv.vs.pred.by.idv(.cur.db)),
-           print(dv.vs.ipred.by.idv(.cur.db)),
-           ##print(wres.vs.idv(.cur.db)),
+           print(dv.vs.pred.by.idv(eval(parse(text=".cur.db")))),
+           print(dv.vs.ipred.by.idv(eval(parse(text=".cur.db")))),
+           ##print(wres.vs.idv(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste(wres,".vs.idv(.cur.db)",sep="")))),
 
-           ##print(wres.vs.idv.bw(.cur.db)),
+           ##print(wres.vs.idv.bw(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste(wres,".vs.idv.bw(.cur.db)",sep="")))),
            
-           ##print(wres.vs.pred(.cur.db)),
+           ##print(wres.vs.pred(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste(wres,".vs.pred(.cur.db)",sep="")))),
            
-           ##print(wres.vs.pred.bw(.cur.db)),
+           ##print(wres.vs.pred.bw(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste(wres,".vs.pred.bw(.cur.db)",sep="")))),
            
-           print(dv.vs.pred.by.cov(.cur.db)),
-           print(dv.vs.ipred.by.cov(.cur.db))
+           print(dv.vs.pred.by.cov(eval(parse(text=".cur.db")))),
+           print(dv.vs.ipred.by.cov(eval(parse(text=".cur.db"))))
 )
 
     if(qx == 2) {

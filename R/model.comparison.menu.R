@@ -40,23 +40,23 @@ model.comparison.menu <-
     
     pick <- menu(choices,title=title)
 
-    if(is.null(check.vars(c("cwres"),.cur.db,silent=TRUE))) {
+    if(is.null(check.vars(c("cwres"),eval(parse(text=".cur.db")),silent=TRUE))) {
       wres <- ""
     }else{
       wres <- ".cwres"
     }
 
     ref.db <- NULL
-    if(exists(".ref.db")) ref.db <- .ref.db
+    if(exists(".ref.db")) ref.db <- eval(parse(text=".ref.db"))
     ref.db2 <- NULL
-    if(exists(".ref.db2")) ref.db2 <- .ref.db2
+    if(exists(".ref.db2")) ref.db2 <- eval(parse(text=".ref.db2"))
 
 
     run.basic.model.comp  <- function(){
       cat("\nRunning command:\n",
-          "basic.model.comp(.cur.db,object.ref=ref.db))\n",
+          "basic.model.comp(.cur.db,object.ref=ref.db)\n",
           sep="")
-      print(basic.model.comp(.cur.db,object.ref=ref.db))
+      print(basic.model.comp(eval(parse(text=".cur.db")),object.ref=ref.db))
     }
     
     
@@ -67,13 +67,13 @@ model.comparison.menu <-
            ref.db <- get.refrunno(),
            ref.db2 <- get.refrunno(database=".ref.db2"),
            run.basic.model.comp(),
-           ##print(basic.model.comp(.cur.db,object.ref=ref.db)),
-           ##print(add.model.comp(.cur.db)),
+           ##print(basic.model.comp(eval(parse(text=".cur.db")),object.ref=ref.db)),
+           ##print(add.model.comp(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("add.model.comp",
                               wres,"(.cur.db,object.ref=ref.db)",sep="")))),
-           print(dOFV.vs.id(.cur.db,ref.db)),
-           print(dOFV.vs.cov(.cur.db,ref.db)),
-           print(dOFV1.vs.dOFV2(.cur.db,ref.db,ref.db2)),
+           print(dOFV.vs.id(eval(parse(text=".cur.db")),ref.db)),
+           print(dOFV.vs.cov(eval(parse(text=".cur.db")),ref.db)),
+           print(dOFV1.vs.dOFV2(eval(parse(text=".cur.db")),ref.db,ref.db2)),
            qx <- model.comparison.covariates.menu()
            )
     

@@ -35,7 +35,7 @@ model.comparison.covariates.menu <-
     
     pick <- menu(choices,title=title)
 
-    if(is.null(check.vars(c("cwres"),.cur.db,silent=TRUE))) {
+    if(is.null(check.vars(c("cwres"),eval(parse(text=".cur.db")),silent=TRUE))) {
       wres <- "wres"
     }else{
       wres <- "cwres"
@@ -46,9 +46,9 @@ model.comparison.covariates.menu <-
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           print(absval.dpred.vs.cov.model.comp(.cur.db)),
-           print(absval.dipred.vs.cov.model.comp(.cur.db)),
-           ##print(absval.dwres.vs.cov.model.comp(.cur.db))
+           print(absval.dpred.vs.cov.model.comp(eval(parse(text=".cur.db")))),
+           print(absval.dipred.vs.cov.model.comp(eval(parse(text=".cur.db")))),
+           ##print(absval.dwres.vs.cov.model.comp(eval(parse(text=".cur.db"))))
            print(eval(parse(text=paste("absval.d",wres,".vs.cov.model.comp(.cur.db)",sep=""))))
            )
     

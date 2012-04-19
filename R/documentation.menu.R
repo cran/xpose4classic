@@ -39,9 +39,9 @@ documentation.menu <-
            qx <- 2,
            qx <- 1,
            change.xp.obj(),
-           tabulate.parameters(.cur.db,prompt=T),
-           runsum.print(.cur.db)
-           #runsum.print(.cur.db,new.version=FALSE)
+           tabulate.parameters(eval(parse(text=".cur.db")),prompt=T),
+           runsum.print(eval(parse(text=".cur.db")))
+           #runsum.print(eval(parse(text=".cur.db")),new.version=FALSE)
            )
     
     if(qx == 2) {

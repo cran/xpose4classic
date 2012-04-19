@@ -44,14 +44,14 @@
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           add.tad(.cur.db, classic=T),
+           add.tad(eval(parse(text=".cur.db")), classic=T),
            cat("Not yet implemented!\n"), #cov.ave(),
-           add.exp(.cur.db, classic=T),
-           add.log(.cur.db, classic=T),
-           add.absval(.cur.db, classic=T),
-           cat("Not yet implemented!\n"), #add.rand(get(".cur.db", classic=T),
-           change.cat.cont(.cur.db, classic=T),
-           add.dichot(.cur.db, classic=T)
+           add.exp(eval(parse(text=".cur.db")), classic=T),
+           add.log(eval(parse(text=".cur.db")), classic=T),
+           add.absval(eval(parse(text=".cur.db")), classic=T),
+           cat("Not yet implemented!\n"), #add.rand(get("eval(parse(text=".cur.db"))", classic=T),
+           change.cat.cont(eval(parse(text=".cur.db")), classic=T),
+           add.dichot(eval(parse(text=".cur.db")), classic=T)
            ##copy.item()
            )
 

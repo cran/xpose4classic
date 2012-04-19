@@ -50,6 +50,7 @@
 \alias{residual.diagnostics.menu}
 \alias{struct.gof.menu}
 \alias{vpc.npc.menu}
+\alias{runsum.print}
 \alias{structural.diagnostics.menu}
 \alias{table.file.read.settings.menu}
 \alias{xpose4}
@@ -60,8 +61,7 @@
 \usage{
 xpose4()
 }
-\arguments{
-}
+
 \details{
   The classical Xpose menu system is invoked by using the command \code{xpose4()}.
   With the exception of \code{xpose4}, these are internal Xpose functions, 
@@ -71,8 +71,7 @@ xpose4()
   Functions for the classic Xpose menu system.
 }
 \author{Andrew Hooker}
-\seealso{
-}
+
 \examples{
 \dontrun{
 xpose4()

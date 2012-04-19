@@ -41,10 +41,10 @@
   switch(pick+1,
          qx <- 2,
          qx <- 1,
-         print(basic.gof(.cur.db)),
-         print(dv.vs.pred.ipred(.cur.db)),
-         print(dv.preds.vs.idv(.cur.db)),
-         print(ind.plots(.cur.db)),
+         print(basic.gof(eval(parse(text=".cur.db")))),
+         print(dv.vs.pred.ipred(eval(parse(text=".cur.db")))),
+         print(dv.preds.vs.idv(eval(parse(text=".cur.db")))),
+         print(ind.plots(eval(parse(text=".cur.db")))),
          qx <- structural.diagnostics.menu(),
          qx <- residual.diagnostics.menu()
          )

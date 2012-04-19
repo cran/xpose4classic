@@ -45,14 +45,14 @@ parameters.menu <-
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           parm.summary(.cur.db,out.file=".ask"),
-           print(parm.qq(.cur.db,prompt=FALSE)),
-           print(parm.hist(.cur.db,prompt=FALSE)),
-           print(parm.splom(.cur.db)),
-           print(parm.vs.parm(.cur.db)),
-           print(ranpar.qq(.cur.db)),
-           print(ranpar.hist(.cur.db)),
-           print(ranpar.splom(.cur.db)),
+           parm.summary(eval(parse(text=".cur.db")),out.file=".ask"),
+           print(parm.qq(eval(parse(text=".cur.db")),prompt=FALSE)),
+           print(parm.hist(eval(parse(text=".cur.db")),prompt=FALSE)),
+           print(parm.splom(eval(parse(text=".cur.db")))),
+           print(parm.vs.parm(eval(parse(text=".cur.db")))),
+           print(ranpar.qq(eval(parse(text=".cur.db")))),
+           print(ranpar.hist(eval(parse(text=".cur.db")))),
+           print(ranpar.splom(eval(parse(text=".cur.db")))),
            cat("\nNot defined yet\n")
            )
     

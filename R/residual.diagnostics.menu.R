@@ -42,7 +42,7 @@ residual.diagnostics.menu <-
 
     pick <- menu(choices,title=title)
 
-    if(is.null(check.vars(c("cwres"),.cur.db,silent=TRUE))) {
+    if(is.null(check.vars(c("cwres"),eval(parse(text=".cur.db")),silent=TRUE))) {
       wres <- "wres"
     }else{
       wres <- "cwres"
@@ -52,35 +52,35 @@ residual.diagnostics.menu <-
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           ##print(wres.dist.hist(.cur.db)),
+           ##print(wres.dist.hist(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste(wres,".dist.hist(.cur.db)",sep="")))),
 
-           ##print(wres.dist.qq(.cur.db)),
+           ##print(wres.dist.qq(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste(wres,".dist.qq(.cur.db)",sep="")))),
            
-           ##print(ind.plots.wres.hist(.cur.db)),
+           ##print(ind.plots.wres.hist(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("ind.plots.",wres,".hist(.cur.db)",sep="")))),
            
-           ##print(ind.plots.wres.qq(.cur.db)),
+           ##print(ind.plots.wres.qq(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("ind.plots.",wres,".qq(.cur.db)",sep="")))),
            
-           ##print(absval.iwres.wres.vs.ipred.pred(.cur.db)),
+           ##print(absval.iwres.wres.vs.ipred.pred(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("absval.iwres.",wres,".vs.ipred.pred(.cur.db)",sep="")))),
            
-           ##print(absval.wres.vs.pred(.cur.db)),
+           ##print(absval.wres.vs.pred(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("absval.",wres,".vs.pred(.cur.db)",sep="")))),
            
-           print(absval.iwres.vs.ipred(.cur.db)),
+           print(absval.iwres.vs.ipred(eval(parse(text=".cur.db")))),
 
-           ##print(absval.wres.vs.cov.bw(.cur.db,bins=9)),
-           print(eval(parse(text=paste("absval.",wres,".vs.cov.bw(.cur.db,bins=9)",sep="")))),
+           ##print(absval.wres.vs.cov.bw(eval(parse(text=".cur.db")),bins=9)),
+           print(eval(parse(text=paste("absval.",wres,".vs.cov.bw(.cur.db),bins=9)",sep="")))),
 
-           ##print(absval.wres.vs.pred.by.cov(.cur.db)),
+           ##print(absval.wres.vs.pred.by.cov(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("absval.",wres,".vs.pred.by.cov(.cur.db)",sep="")))),
 
-           print(absval.iwres.vs.ipred.by.cov(.cur.db)),
+           print(absval.iwres.vs.ipred.by.cov(eval(parse(text=".cur.db")))),
 
-           ##print(autocorr.wres(.cur.db)),
+           ##print(autocorr.wres(eval(parse(text=".cur.db")))),
            print(eval(parse(text=paste("autocorr.",wres,"(.cur.db)",sep=""))))
            )
 

@@ -54,7 +54,7 @@ xpose4 <- function() {
        Department of Pharmaceutical Biosciences,
        Uppsala University, Sweden.
 		                        
-Version: Xpose 4.3.2 (xpose4_4.3.2), 2010-11-30
+Version: Xpose 4.3.5, 2012-04-19
 				                        
 http://xpose.sourceforge.net
 

@@ -48,13 +48,13 @@
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           list.gam.settings(.cur.db),
+           list.gam.settings(eval(parse(text=".cur.db"))),
            change.dispersion(),
            change.steppit(),
            change.onlyfirst(),
-           change.subset(.cur.db, classic = T),
+           change.subset(eval(parse(text=".cur.db")), classic = T),
            change.medianNorm(),
-           change.covs(.cur.db, classic = T),
+           change.xvardef(eval(parse(text=".cur.db")), classic=T, var="covariates"),
            gam.change.weights(),
            change.use.ids()
            )

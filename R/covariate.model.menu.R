@@ -40,7 +40,7 @@
     
     pick <- menu(choices,title=title)
 
-    if(is.null(check.vars(c("cwres"),.cur.db,silent=TRUE))) {
+    if(is.null(check.vars(c("cwres"),eval(parse(text=".cur.db")),silent=TRUE))) {
       wres <- "wres"
     }else{
       wres <- "cwres"
@@ -51,13 +51,13 @@
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           cov.summary(.cur.db,out.file=".ask"),
-           print(cov.splom(.cur.db)),
-           print(parm.vs.cov(.cur.db)),
+           cov.summary(eval(parse(text=".cur.db")),out.file=".ask"),
+           print(cov.splom(eval(parse(text=".cur.db")))),
+           print(parm.vs.cov(eval(parse(text=".cur.db")))),
            cat("\nNot implemented yet!\n"),
 
-           ##print(wres.vs.cov(.cur.db)),
-           print(eval(parse(text=paste(wres,".vs.cov(.cur.db)",sep="")))),
+           ##print(wres.vs.cov(eval(parse(text=".cur.db")))),
+           print(eval(parse(text=paste(wres,".vs.cov(.cur.db",sep="")))),
 
            qx <- gam.menu(),
            cat("\nNot implemented yet!\n"),

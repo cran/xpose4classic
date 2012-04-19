@@ -42,12 +42,12 @@ data.checkout.menu <-
     switch(pick+1,
            qx <- 2,
            qx <- 1,
-           cov.summary(.cur.db),
-           print(cov.hist(.cur.db)), 
-           print(cov.qq(.cur.db)),
-           print(cov.splom(.cur.db)),
-           print(data.checkout(obj=.cur.db)), #cat("\nNot defined yet\n"),
-           print(dv.vs.idv(.cur.db)) #cat("\nNot defined yet\n")
+           cov.summary(eval(parse(text=".cur.db"))),
+           print(cov.hist(eval(parse(text=".cur.db")))), 
+           print(cov.qq(eval(parse(text=".cur.db")))),
+           print(cov.splom(eval(parse(text=".cur.db")))),
+           print(data.checkout(obj=eval(parse(text=".cur.db")))), #cat("\nNot defined yet\n"),
+           print(dv.vs.idv(eval(parse(text=".cur.db")))) #cat("\nNot defined yet\n")
            )
 
     if(qx == 2) {
