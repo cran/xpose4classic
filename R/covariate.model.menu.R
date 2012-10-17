@@ -32,7 +32,7 @@
                  "* Parameters vs covariates + model prediction",
                  "Weighted residuals vs covariates",
                  "GAM",
-                 "* Bootstrap of the GAM",
+                 "Bootstrap of the GAM", "Bootstrap of the SCM",
                  "* Tree"
                  )
 
@@ -57,10 +57,11 @@
            cat("\nNot implemented yet!\n"),
 
            ##print(wres.vs.cov(eval(parse(text=".cur.db")))),
-           print(eval(parse(text=paste(wres,".vs.cov(.cur.db",sep="")))),
+           print(eval(parse(text=paste(wres,".vs.cov(.cur.db)",sep="")))),
 
            qx <- gam.menu(),
-           cat("\nNot implemented yet!\n"),
+           qx <- bootgam.menu(),
+           qx <- bootscm.menu(),
            cat("\nNot implemented yet!\n")
            )
 

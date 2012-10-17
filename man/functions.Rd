@@ -63,7 +63,7 @@ xpose4()
 }
 
 \details{
-  The classical Xpose menu system is invoked by using the command \code{xpose4()}.
+  The classic Xpose menu system is invoked by using the command \code{xpose4()}.
   With the exception of \code{xpose4}, these are internal Xpose functions, 
   not intended for direct use.
 }

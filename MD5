@@ -1,7 +1,8 @@
-26fa1b7c988d469b6302becec9f6cbb4 *DESCRIPTION
+a70ab2308c7b00e3c70288628e84753a *DESCRIPTION
 4b47a878fcc4f093e2f01c5c8ebd0c53 *NAMESPACE
 e4c58b351661889200617aee1cae94c2 *R/add.modify.db.items.menu.R
 57c9ebc5d8051f5a8c7fee833d8dd061 *R/another.menu.R
+91b532628fe0864a7b3d474dc2c0c168 *R/bootgam.menu.R
 e32c219e88cf5da54417fcbe3c1ab5bc *R/change.dispersion.R
 141e03f7a6fcb61288e9c9dd9b9e2548 *R/change.graphical.par.R
 4e8afbcf9dcc54bd07f2a536e2e71608 *R/change.medianNorm.R
@@ -9,7 +10,7 @@ f077920fcb7df61df654c1cf8ec04c90 *R/change.onlyfirst.R
 a093adf651fa4679c88e81af91134788 *R/change.steppit.R
 8f55233deae22899a7ff96088eb4eedd *R/change.use.ids.R
 ea354ca5fd1e5634d7e0f7a3c140f022 *R/change.xp.obj.R
-e4710179d51828dfb135bae781a5217f *R/covariate.model.menu.R
+ea1ac07d47a2323be0416687a1317aeb *R/covariate.model.menu.R
 8a780d9492f20db57ddf39f333bcea7c *R/cwres.menu.R
 8876a2fbcc40af5d2d3cfa1d310a5df6 *R/data.checkout.menu.R
 e572f103f2b030f2e853332edc54726a *R/documentation.menu.R
@@ -29,9 +30,10 @@ a3c4dfb28437094919ee39994b09a7ac *R/residual.diagnostics.menu.R
 da6c9f5ab27fa2497bd7adcc497f1605 *R/struct.gof.menu.R
 3a6ebea4da8f74ffbb76ac1a4257b300 *R/structural.diagnostics.menu.R
 39f355961d3934a951b0a11fc288cbd0 *R/vpc.npc.menu.R
-d08f314704c786af35c053a41c266143 *R/xpose4.R
+bac22d1e99cab7d979878af5d8a90eb2 *R/xpose4.R
 8af910abc1b2d5072c93e9004d2c1a97 *inst/CITATION
-172ca3d39a0e0b7b2e215481810fff70 *inst/changelog.txt
-7be8dbe5703d9ade36aa752f23d7f09a *inst/readme.txt
-80e3759b0929d06f59acebefe557552d *man/functions.Rd
+5d327cb470677f812c82c7893fa64f22 *inst/changelog.txt
+65b6b73ca13facddf8f7b87fa932d52e *inst/readme.txt
+1afe62fe7b901660d7a01b9d256dc063 *man/functions.Rd
+82692274b6752c1470e4c5afeeae6754 *man/xpose4classic-internal.Rd
 56f6cf3fa60679de0922cb159fed76b3 *man/xpose4classic-package.Rd
