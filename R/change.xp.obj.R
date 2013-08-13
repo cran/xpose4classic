@@ -37,8 +37,9 @@
       ##
       ## Use old
       ##
-      assign(pos = 1, ".cur.db", eval(as.name(paste("xpdb", 
+      c1<-call("assign",pos = 1, ".cur.db", eval(as.name(paste("xpdb", 
                new.runno, sep = ""))))
+      eval(c1)
       return()
     }
   }
@@ -52,8 +53,11 @@
     return()
   } else {
     newnam <- paste("xpdb", new.runno, sep = "")
-    assign(pos = 1, newnam, newdb)
-    assign(pos = 1, ".cur.db",newdb )
+    c1<-call("assign",pos=1,newnam,newdb)
+    eval(c1)
+    #assign(pos = 1, newnam, newdb)
+    c1<-call("assign",pos = 1, ".cur.db",newdb )
+    eval(c1)
   }
 }
 

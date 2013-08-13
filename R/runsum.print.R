@@ -23,12 +23,13 @@
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
 runsum.print <- function(object,
-                         dev="win",
-                         printer="HP8150",
+                         ##dev="win",
+                         ##printer="HP8150",
                          modfile=paste("run",object@Runno,".mod",sep=""),
                          listfile=paste("run",object@Runno,".lst",sep=""),
-                         new.version=TRUE,
+                         ##new.version=TRUE,
                          print.cex=0.45,
+                         print.columns=3,
                          ...) {
 
 
@@ -78,41 +79,24 @@ runsum.print <- function(object,
 
 
   ## Start the printing device
-  cat("Do you want to send the summary output to the printer n(y)?\n")
+  cat("Do you want to optimize the summary output for printing n(y)?\n")
   printit <- readline()
   if(printit=="y") { 
-    if(dev=="win") {
-      win.print(height=11.7,width=8.25)
-    } else if (dev=="lpr") {
-      postscript(paste("|lpr -P ", printer, sep=""), paper="a4", horizontal=F)
-    }
+      dev.new(height=11.7,width=8.25)
   }
 
-  if(!new.version){
-    runsum(object,
-           modfile=cmdfile,
-           listfile = lstfile,
-           ...)
-  } else {
-    if(printit=="y") { 
-      runsum(object,
-                 modfile=cmdfile,
-                 listfile = lstfile,
-                 txt.columns=3,
-                 txt.cex=print.cex,
-                 ...)
-    } else {
-      runsum(object,
-                 modfile=cmdfile,
-                 listfile = lstfile,
-                 ##txt.cex=0.7,
-                 ...)
-    }
-  }
-  
   if(printit=="y") { 
-    if(dev=="win" || dev=="lpr") {
-      dev.off()
-    }
-  }
+      runsum(object,
+             modfile=cmdfile,
+             listfile = lstfile,
+             txt.columns=print.columns,
+             txt.cex=print.cex,
+             ...)
+  } else {
+      runsum(object,
+             modfile=cmdfile,
+             listfile = lstfile,
+             ##txt.cex=0.7,
+             ...)
+  }  
 }

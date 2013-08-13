@@ -39,7 +39,8 @@ set.max.replicates <- function (first = TRUE) {
   } else {
     if (ans > 0) {
       .cur.db@Prefs@Bootgam.prefs$n <- ans
-      assign(pos = 1, ".cur.db", .cur.db)
+      c1 <- call("assign",pos = 1, ".cur.db", .cur.db)
+      eval(c1)
       invisible()
       return()
     } else {
@@ -61,7 +62,8 @@ bootgam.conv.crit1 <- function() {
     Recall()
   }
   .cur.db@Prefs@Bootgam.prefs$crit1.conv <- ans
-  assign(pos = 1, ".cur.db", .cur.db)
+  c2 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c2)
   invisible()
   return()
 }
@@ -92,7 +94,8 @@ bootgam.conv.crit2 <- function(skip=F) {
   } else {
     .cur.db@Prefs@Bootgam.prefs$crit2.ljif.conv <- ans2
   }
-  assign(pos = 1, ".cur.db", .cur.db)
+  c3 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c3)
   invisible()
   return()
 }
@@ -112,7 +115,8 @@ specify.start.model <- function () {
     st.covs <- NULL
   }
   .cur.db@Prefs@Bootgam.prefs$start.mod <- st.covs
-  assign(pos = 1, ".cur.db", .cur.db)
+  c4 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c4)
   invisible()
   return()
 }
@@ -125,7 +129,9 @@ normalize.median <- function () {
     .cur.db@Prefs@Bootgam.prefs$median.norm <- FALSE
     cat ("\nNormalize to median is now set to OFF\n")
   }
-  assign(pos = 1, ".cur.db", .cur.db)
+  c5 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c5)
+  
   invisible()
   return()
 }
@@ -155,7 +161,8 @@ bg.conv.crit2 <- function(skip = FALSE) {
   } else {
     .cur.db@Prefs@Bootgam.prefs$ljif.conv <- ans2
   }
-  assign(pos = 1, ".cur.db", .cur.db)
+  c6 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c6)
   invisible()
   return()
 }
@@ -172,7 +179,8 @@ bg.conv.crit1 <- function() {
     Recall()
   }
   .cur.db@Prefs@Bootgam.prefs$conv.value <- ans
-  assign(pos = 1, ".cur.db", .cur.db)
+  c7 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c7)
   invisible()
   return()
 }
@@ -187,11 +195,13 @@ change.conv.alg <- function () {
   switch(pick,
 	 return(),
 	 { .cur.db@Prefs@Bootgam.prefs$algo <- "fluct.ratio"
-           assign(pos = 1, ".cur.db", .cur.db)
+           c8 <- call("assign",pos = 1, ".cur.db", .cur.db)
+           eval(c8)
            bg.conv.crit1()
          },
 	 { .cur.db@Prefs@Bootgam.prefs$algo <- "liif"
-           assign(pos = 1, ".cur.db", .cur.db)
+           c9 <- call("assign",pos = 1, ".cur.db", .cur.db)
+           eval(c9)
   	   bg.conv.crit2()
          })
   Recall()
@@ -210,7 +220,8 @@ specify.start.check <- function () {
     Recall()
   }
   .cur.db@Prefs@Bootgam.prefs$start.check <- ans
-  assign(pos = 1, ".cur.db", .cur.db)
+  c10 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c10)
   invisible()
   return()
 }
@@ -227,7 +238,8 @@ specify.interval <- function () {
     Recall()
   }
   .cur.db@Prefs@Bootgam.prefs$check.interval <- ans
-  assign(pos = 1, ".cur.db", .cur.db)
+  c11 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c11)
   invisible()
   return()
 }
@@ -240,7 +252,8 @@ exclude.individuals <- function () {
     inds <- NULL
   }
   .cur.db@Prefs@Bootgam.prefs$excluded.ids <- inds
-  assign(pos = 1, ".cur.db", .cur.db)
+  c12 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c12)
   invisible()
   return()
 }
@@ -257,7 +270,8 @@ set.seed.number <- function () {
     cat("The number must be between 1 and 1000\n")
     Recall()
   }
-  assign(pos = 1, ".cur.db", .cur.db)
+  c13 <- call("assign",pos = 1, ".cur.db", .cur.db)
+  eval(c13)
 }
 
 

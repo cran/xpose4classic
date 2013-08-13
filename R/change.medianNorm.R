@@ -41,14 +41,16 @@ function(first=TRUE)
         
   if(ans == "FALSE" || ans == "FALSE") {
     .cur.db@Prefs@Gam.prefs$medianNorm <- FALSE
-    assign(pos = 1, ".cur.db", .cur.db)
+    c1<-call("assign",pos = 1, ".cur.db", .cur.db)
+    eval(c1)
     invisible()
     return()
     
   } else {
     if(ans == "true" || ans == "TRUE") {
       .cur.db@Prefs@Gam.prefs$medianNorm <- TRUE
-      assign(pos = 1, ".cur.db", .cur.db)
+      c1<-call("assign",pos = 1, ".cur.db", .cur.db)
+      eval(c1)
       invisible()
       return()
     } else {

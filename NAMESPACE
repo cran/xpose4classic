@@ -1,2 +1,2 @@
-import(lattice, survival, methods, xpose4data, xpose4generic, xpose4specific)
+import(lattice, methods, xpose4data, xpose4generic, xpose4specific)
 exportPattern("^[^\\.]")

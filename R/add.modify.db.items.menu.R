@@ -35,11 +35,10 @@
                  "Change covariates categorical <-> continuous ", 
                  "Create a categorical item based on a continuous item"
                  ##"Copy data item from another database"
-                 )
+    )
     
     title=("\nCREATE/MODIFY DATA ITEMS MENU\n  \\main\\preferences\\Create/modify items in the current database")
     pick <- menu(choices,title=title)
-    
     qx <- 0
     switch(pick+1,
            qx <- 2,
@@ -49,12 +48,13 @@
            add.exp(eval(parse(text=".cur.db")), classic=T),
            add.log(eval(parse(text=".cur.db")), classic=T),
            add.absval(eval(parse(text=".cur.db")), classic=T),
+           #object<-add.absval(object),
            cat("Not yet implemented!\n"), #add.rand(get("eval(parse(text=".cur.db"))", classic=T),
            change.cat.cont(eval(parse(text=".cur.db")), classic=T),
            add.dichot(eval(parse(text=".cur.db")), classic=T)
            ##copy.item()
-           )
-
+    )
+    
     if(qx == 2) {
       return(invisible(2))
     } else {
@@ -65,5 +65,5 @@
       }
     } 
     
-}
+  }
 

@@ -40,20 +40,23 @@ function(first=TRUE)
         
   if(ans == "NULL" || ans == "null") {
     .cur.db@Prefs@Gam.prefs$wts <- NULL
-    assign(pos = 1, ".cur.db", .cur.db)
+    c1<-call("assign",pos = 1, ".cur.db", .cur.db)
+    eval(c1)
     invisible()
     return()
     
   } else {
     if(ans == "true" || ans == "TRUE") {
       .cur.db@Prefs@Gam.prefs$wts <- TRUE
-      assign(pos = 1, ".cur.db", .cur.db)
+      c1<-call("assign",pos = 1, ".cur.db", .cur.db)
+      eval(c1)
       invisible()
       return()
     } else {
       if(ans == "false" || ans == "FALSE") {
         .cur.db@Prefs@Gam.prefs$wts <- FALSE
-        assign(pos = 1, ".cur.db", .cur.db)
+        c1<-call("assign",pos = 1, ".cur.db", .cur.db)
+        eval(c1)
         invisible()
         return()
       } else {
